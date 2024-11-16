@@ -1,4 +1,4 @@
-# IDC Scripts
+# IDC Generation Script (touchscreen or touchpad)
 
 ## Step 1 - Collect the needed info from the device
 
