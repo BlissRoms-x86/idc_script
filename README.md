@@ -47,6 +47,7 @@ For Touchpad"
 ```
 Identifier: bus=0x0003, vendor=0x045e, product=0x07e8, version=0x0111
 ```
+## Step 2 - run the script from the device
 
 So you would plug in the USB, and open up the alt-f1 console or push to the device use adb root shell.
 
