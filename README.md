@@ -49,16 +49,20 @@ Identifier: bus=0x0003, vendor=0x045e, product=0x07e8, version=0x0111
 ```
 ## Step 2 - run the script from the device
 
-So you would plug in the USB, and open up the alt-f1 console or push to the device use adb root shell.
+So initially, you would copy this script to a USB plug it inti the device, and open up the alt-f1 console. 
+or you can push it to the device use adb root shell.
 
 For on-device, do the following (changing the ###-### to match what USB ID is there):
 ```
 sh /mnt/media_rw/###-###/create_touch_input__idc_in_data.sh -t|--touchscreen|-p|--touchpad <vendor ID> <product ID> <version ID>
 
 ```
-or:
+or for ADB do:
 ```
-sh /sdcard/Download/create_touch_input__idc_in_data.sh -t|--touchscreen|-p|--touchpad <vendor ID> <product ID> <version ID>
+adb connect xx.xx.xx.xx:5555
+adb root
+adb push create_touch_input__idc_in_data.sh /sdcard/Download/
+adb shell sh /sdcard/Download/create_touch_input__idc_in_data.sh -t|--touchscreen|-p|--touchpad <vendor ID> <product ID> <version ID>
 
 ```
 Example for touchscreen:
@@ -66,4 +70,3 @@ Example for touchscreen:
 sh /mnt/media_rw/###-###/create_touch_input__idc_in_data.sh -t 1b96 006a 0000
 
 ```
-(changing the ###-### to match what USB ID is there)
